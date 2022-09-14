@@ -2,9 +2,9 @@ public class Main {
     public static void main(String[] args) {
 
         // Input Strings
-        String a = "eNDcLWFCERZOLQjEZCEPKXPCYKCVKALNxBADQBFDQUpdqunpelxauyyrwtjpkwoxh";
-        String b = "NDLWFCERZOLQEZCEPKXPCYKCVKALNBADQBFDQU";
-
+        String a = "hHhAhhcahhacaccacccahhchhcHcahaahhchhhchaachcaCchhchcaccccchhhcaahhhhcaacchccCaahhaahach";
+        String b = "HAHHCH";
+        
         // Compute if string a can be converted to string b
         Results solObj = new Results();
 
