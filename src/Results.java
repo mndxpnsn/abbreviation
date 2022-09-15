@@ -53,21 +53,18 @@ public class Results {
 
         // Letters differ
         if(ca[ja] != cb[jb]) {
-            char up = toUpper(ca[ja]);
-            boolean isU = isUpper(ca[ja]);
-
             // Char ca[ja] can be capitalized to cb[jb]
-            if(!isU && up == cb[jb]) {
+            if(!isUpper(ca[ja]) && toUpper(ca[ja]) == cb[jb]) {
                 int val1 = canMake(ca, cb, ja - 1, jb - 1, dp);
                 int val2 = canMake(ca, cb, ja - 1, jb, dp);
                 res = val1 == 2 || val2 == 2 ? 2 : -1;
             }
             // Char ca[ja] cannot be capitalized to cb[jb]
-            if(!isU && up != cb[jb]) {
+            if(!isUpper(ca[ja]) && toUpper(ca[ja]) != cb[jb]) {
                 res = canMake(ca, cb, ja - 1, jb, dp);
             }
             // Capital letter in string a is not present in string b
-            if(isU && up != cb[jb]) {
+            if(isUpper(ca[ja]) && toUpper(ca[ja]) != cb[jb]) {
                 res = -1;
             }
         }
