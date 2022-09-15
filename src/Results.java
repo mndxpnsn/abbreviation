@@ -17,11 +17,16 @@ public class Results {
             return -1;
         }
 
+        // Last elements of string a and string b have been reached
+        if(ja == 0 && jb == 0) {
+            if(ca[ja] != cb[jb] && isUpper(ca[ja])) {
+                return -1;
+            }
+            return 2;
+        }
+
         // Last element of string b has been reached
         if(jb == 0 && ja >= 0) {
-            if(ca[ja] == cb[jb] || toUpper(ca[ja]) == cb[jb]) {
-                return 2;
-            }
             if(ca[ja] != cb[jb] && isUpper(ca[ja])) {
                 return -1;
             }
