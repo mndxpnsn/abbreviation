@@ -8,6 +8,25 @@ public class Results {
         return java.lang.Character.toUpperCase(c);
     }
 
+    int getRem(char[] ca, char[] cb, int j) {
+
+        boolean matchCap = false;
+        int numMatches = 0;
+        for(int i = 0; i <= j; ++i) {
+            if(ca[i] != cb[0] && isUpper(ca[i])) {
+                return -1;
+            }
+            if(toUpper(ca[i]) == cb[0]) {
+                matchCap = true;
+            }
+            if(ca[i] == cb[0]) {
+                numMatches++;
+            }
+        }
+
+        return numMatches == 1 || numMatches == 0 && matchCap ? 2 : -1;
+    }
+
     int canMake(char[] ca, char[] cb, int ja, int jb, int[][] dp) {
 
         int res = -1;
@@ -17,20 +36,9 @@ public class Results {
             return -1;
         }
 
-        // Last elements of string a and string b have been reached
-        if(ja == 0 && jb == 0) {
-            if(ca[ja] != cb[jb] && isUpper(ca[ja])) {
-                return -1;
-            }
-            return 2;
-        }
-
         // Last element of string b has been reached
         if(jb == 0 && ja >= 0) {
-            if(ca[ja] != cb[jb] && isUpper(ca[ja])) {
-                return -1;
-            }
-            return canMake(ca, cb, ja - 1, jb, dp);
+            return getRem(ca, cb, ja);
         }
 
         // Get results from memo table if available

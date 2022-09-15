@@ -2,8 +2,8 @@ public class Main {
     public static void main(String[] args) {
 
         // Input Strings
-        String a = "hHhAhhcahhacaccacccahhchhcHcahaahhchhhchaachcaCchhchcaccccchhhcaahhhhcaacchccCaahhaahach";
-        String b = "HAHHCH";
+        String a = "ZdaBcd";
+        String b = "ABC";
         
         // Compute if string a can be converted to string b
         Results solObj = new Results();
