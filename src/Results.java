@@ -64,7 +64,7 @@ public class Results {
                 res = canMake(ca, cb, ja - 1, jb, dp);
             }
             // Capital letter in string a is not present in string b
-            if(isUpper(ca[ja]) && toUpper(ca[ja]) != cb[jb]) {
+            if(isUpper(ca[ja]) && ca[ja] != cb[jb]) {
                 res = -1;
             }
         }
